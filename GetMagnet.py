@@ -10,10 +10,6 @@ class torrentGUI(object):
     
     def __init__(self):
         
-
-        
-            
-        
         self.win = Tk()
         self.win.title('Get Torrent Info')
         self.win.resizable(12,12)
@@ -30,11 +26,8 @@ class torrentGUI(object):
             filepath = sys.argv[1]
             path_var.set(filepath)
             self.processing(filepath)
-             
-        
+              
         self.btn = Button(self.win , text = 'Choose File' , command = lambda : self.callback(path_var)).grid(row = 2)
-        
-        
         
         Frame(self.win , width = 200 , height = 50).grid()
         
@@ -51,8 +44,6 @@ class torrentGUI(object):
         getTorrent = GetTorrentInfo.GetTorrentInfo(pathname)
         magnet_url = getTorrent.get_magnet()
 
-    
-        
         magnet_var = StringVar()
         magnet_var.set(magnet_url)
 
@@ -63,17 +54,12 @@ class torrentGUI(object):
         self.magnet_label = Entry(self.win , width = 50 , textvariable = magnet_var)        
         self.magnet_label.grid(row = 4)
 
-
 try:
     a = torrentGUI()
 
     a.win.mainloop()
-except Exception, errormsg:
-    print "Script errored!"
-    print "Error message: %s" % errormsg
-    print "Traceback:"
+except Exception, e:
     import traceback
     traceback.print_exc()
     print "Press return to exit.."
     raw_input()
-
