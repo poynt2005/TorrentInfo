@@ -12,7 +12,7 @@ python GetTorrentInfo.py test.torrent
 
 ## GetMagnet.py
 > ### print torrent magnet in the GUI
->> Usage : Open File in command line <u>*Experimental function*</u>
+>> Usage : Open File in command line *(Experimental function)*
 ```
 python GetMagnet.py test.torrent
 ```
