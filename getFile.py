@@ -49,6 +49,7 @@ class Torrent2Magnet(object):
             #if getting torrent longer than 60 secs. Stop to find the torrent
             if not (time.time() - start_time) <= 60:
                 found = False
+                break
             print 'Each 2 sec.  Download Speed is : %f' % (libtorrent.peer_info().down_speed)
             continue
 
